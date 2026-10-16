@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "research-swarms",
+  "version": "1.0.0",
+  "description": "Multi-angle research with parallel subagents: Research Swarm maps a topic from 3-5 angles; Outlier Swarm finds contrarian winners through five fixed lenses. One cited report with verdicts.",
+  "author": {
+    "name": "Ed Dale",
+    "email": "ed@powerhouselab.ai"
+  },
+  "homepage": "https://github.com/Eddale/research-swarms",
+  "repository": "https://github.com/Eddale/research-swarms",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "swarm",
+    "outlier",
+    "contrarian",
+    "synthesis",
+    "reports"
+  ]
+}
