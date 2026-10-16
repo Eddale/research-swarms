@@ -41,13 +41,21 @@ These steps run only when the tool or file is already available. Otherwise the s
 
 Outlier Swarm includes `skills/outlier-swarm/scripts/fetch_page.sh`. It is an optional fallback for when the agent's normal web fetch cannot read a public page. It needs Google Chrome or Chromium. Set `CHROME_PATH` if the binary is not on `PATH`. If Chrome is missing, skip the script.
 
+Chrome running as root in some containers may need `--no-sandbox`. The script does not pass that flag, and it has no environment variable that turns the flag on.
+
 ```bash
 skills/outlier-swarm/scripts/fetch_page.sh https://example.com
 ```
 
 ## Logo
 
-`assets/logo.png` is the plugin logo. The manifest references it as `assets/logo.png`.
+`assets/logo.png` is the plugin logo. `.cursor-plugin/plugin.json` references it as `assets/logo.png`.
+
+## Manifests
+
+`.cursor-plugin/plugin.json` is the complete Cursor manifest. It includes `displayName`, `logo`, `category`, and `skills`.
+
+The root `plugin.json` follows the [Agent Plugins 1.0 schema](https://agent-plugins.org/schemas/1.0.0/plugin.schema.json). That schema does not allow `logo`, `skills`, `displayName`, or `category`, so the root manifest leaves them out. The shared fields (`name`, `version`, `description`, `author`, `license`, `keywords`, `repository`, `homepage`) match the Cursor manifest.
 
 ## Links
 

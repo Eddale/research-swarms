@@ -51,7 +51,7 @@ If a notes vault or other personal knowledge base is available, search it for th
 
 Evaluate whatever you find:
 
-- **Strong match:** Prior research exists. Ask: "Found prior research on [topic] from [date]. Update it or start fresh?"
+- **Strong match:** Prior research exists. Ask: "Found prior research on [topic] from [date]. Update it or start fresh?" If you can't ask the user, build on it and say so.
 - **Useful context:** Related notes that inform the angles. Incorporate them and continue.
 - **Nothing relevant:** Continue with full outside research.
 
@@ -121,7 +121,7 @@ Combine findings into one report. Look for:
 [2-3 sentence synthesis of key findings]
 
 ## Prior Knowledge
-[Links to related notes found in Phase 2, or "No prior research on this topic"]
+[Links to related notes found in Phase 2. If the prior-knowledge check was skipped: "No personal knowledge base detected. Skipped the prior-research check." If nothing relevant was found: "No prior research on this topic."]
 
 ## Findings by Angle
 
@@ -169,8 +169,8 @@ Combine findings into one report. Look for:
 
 | Finding | Verdict | Next Step |
 |---------|---------|-----------|
-| [Key finding 1] | Act now / Bookmark / Ignore | [Specific action] |
-| [Key finding 2] | Act now / Bookmark / Ignore | [Specific action] |
+| [Key finding 1] | Act now / Bookmark / Ignore / Needs more research | [Specific action] |
+| [Key finding 2] | Act now / Bookmark / Ignore / Needs more research | [Specific action] |
 
 ## Learning Triggers
 

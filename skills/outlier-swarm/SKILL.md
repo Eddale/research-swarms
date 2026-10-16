@@ -54,7 +54,7 @@ If a notes vault or other personal knowledge base is available, search it for th
 
 Evaluate whatever you find:
 
-- **Strong match:** Prior outlier research exists. Ask: "Found prior contrarian research on [topic] from [date]. Build on it or start fresh?"
+- **Strong match:** Prior outlier research exists. Ask: "Found prior contrarian research on [topic] from [date]. Build on it or start fresh?" If you can't ask the user, build on it and say so.
 - **Useful context:** Related notes. Incorporate them and continue.
 - **Nothing relevant:** Continue with full outside research.
 
@@ -112,7 +112,7 @@ Return: Names, approaches, and evidence. The more dismissed they are by the main
 
 **Question:** "Who outside this field solves a similar problem better?"
 
-Analogy, not accuracy. Find solutions from completely different fields.
+Analogy, not accuracy. Find solutions from completely different fields. Label unsourced analogies as reasoning.
 
 **Prompt:**
 
@@ -125,7 +125,7 @@ Find cross-domain solutions for [topic]:
 
 [Mission context line if available]
 
-Return: At least 3 cross-domain connections with the reasoning for why they apply.
+Return: At least 3 cross-domain connections with the reasoning for why they apply. Label unsourced analogies as reasoning.
 ```
 
 ### Lens 4: First Principles Assassin
@@ -174,10 +174,10 @@ Return: Ideas that might be due for resurrection, with context on why they faile
 
 Prefer the agent's built-in web fetch.
 
-If a public page will not load that way, this skill includes an optional fallback at `scripts/fetch_page.sh` (relative to this skill). It prints the page DOM. It needs Google Chrome or Chromium on the machine. If Chrome is not available, skip the script and continue with sources you can already read. A missing browser is not a failed swarm.
+If a public page will not load that way, this skill includes an optional fallback at `skills/outlier-swarm/scripts/fetch_page.sh` (from the repository root, or `scripts/fetch_page.sh` from this skill's directory). It prints the page DOM. It needs Google Chrome or Chromium on the machine. If Chrome is not available, skip the script and continue with sources you can already read. A missing browser is not a failed swarm.
 
 ```bash
-scripts/fetch_page.sh <https-url>
+skills/outlier-swarm/scripts/fetch_page.sh <https-url>
 ```
 
 Set `CHROME_PATH` when the binary is not on `PATH`.
@@ -212,6 +212,9 @@ When a contrarian approach, a cross-domain insight, and first-principles reasoni
 
 ## Executive Summary
 [2-3 sentences on the most surprising convergent insight]
+
+## Prior Knowledge
+[Links to related notes found in Phase 2. If the prior-knowledge check was skipped: "No personal knowledge base detected. Skipped the prior-research check." If nothing relevant was found: "No prior research on this topic."]
 
 ## Mainstream Consensus (What Everyone Believes)
 [Summary from Lens 1]
@@ -297,6 +300,9 @@ When a contrarian approach, a cross-domain insight, and first-principles reasoni
 ## Sources
 - [Source 1](URL)
 - [Source 2](URL)
+
+## Open Questions
+[What we still don't know]
 ```
 
 ---
@@ -353,4 +359,4 @@ Present the executive summary, the key convergent insight, and the action verdic
 - Always 5 lenses. The framework is the five lenses.
 - If subagents are available, run them together. Otherwise run the lenses one by one.
 - The value is in the structure of the inquiry: five mutually exclusive mandates reveal what any single perspective misses.
-- `scripts/fetch_page.sh` is optional. Skip it when Chrome is not available.
+- `skills/outlier-swarm/scripts/fetch_page.sh` is optional. Skip it when Chrome is not available.
